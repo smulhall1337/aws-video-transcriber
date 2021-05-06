@@ -134,7 +134,11 @@ async function transcribeAudio(params)
   			},
   			MediaFormat: "mp3",
   			TranscriptionJobName: params.videoId,
-  			OutputBucketName: params.outputBucket
+  			OutputBucketName: params.outputBucket,
+			Settings: {
+		  		ShowSpeakerLabels: true,
+				MaxSpeakerLabels: 2
+			}
 		};
 
 		if (params.vocabularyExists)
